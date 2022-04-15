@@ -1,0 +1,54 @@
+#
+# Python FSR input file
+#
+# for detailled explanations see PyFSRec-Documentation.pdf
+#
+[INPUT/OUTPUT]
+INPUTPATH=/the/path/to/your/image/files/ # on Wondows: C:\the\path\to\your\image\files\
+INPUTFILENAME=basefilename_
+NImages=30
+OUTPUTPATH=/the/path/to/your/reconstruction/files/
+OUTPUTFILENAME=Reconstructionbasename
+
+[IMAGEDATA]	
+Dimensions=[512, 512]
+Sampling=[0.04198,0.04198]
+Offset=[0,0]
+AREA=[324,324]
+Range=[[0,29]]
+
+[OPTICS]
+Voltage=300
+C3=2.7E6
+C5=0.
+Semiconvergence=0.05
+Focusspread=6
+Imagespread=20.
+Foci=[-269.46,-263.00,-256.54,-250.08,-243.62,-237.16,-230.71,-224.25,-217.79,-211.33,-204.87,-198.41,-191.95,-185.49,-179.03,-172.57,-166.11,-159.65,-153.19,-146.73,-140.27,-133.81,-127.35,-120.89,-114.43,-107.97,-101.51,-95.05,-88.59,-82.13]
+
+[ALIGNMENT]
+Comkernel=3
+Maxprealign=10
+Methprealign=sequential-com
+RAVERAGE=0
+Invertprealign=Off
+
+[RECONSTRUCTION]
+Limit=5.5
+Filtercutoff=0.1
+Prealignment=On
+Envelopes=On
+Alignmentfilter=[1.,4.]
+Alignmentprecision=0.1
+LinearIterations=8
+Savealigned=No
+Saveintermediaterec=No
+Outputfilter=[0.8,5.5]
+
+[STEPREFINEMENT]
+Rangemultiplicator=2
+Stepmultiplicator=0.2
+
+[AUTOCORRECTION]
+Autofocusrange=180
+Autofocusfilter=[1.1,5.]
